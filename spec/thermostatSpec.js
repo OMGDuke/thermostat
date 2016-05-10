@@ -16,4 +16,20 @@ describe('Thermostat', function() {
     }
   });
 
+  it('can decrease the temperature', function() {
+    for (i=1; i<= 5; i++) {
+      thermostat.decreaseTemperature();
+      expect(thermostat.temperature()).toEqual(20 - i);
+    }
+  });
+
+  it('will not decrease below 10 degrees', function() {
+    for (i=1; i<=11; i++) {
+      thermostat.decreaseTemperature();
+    }
+    expect(thermostat.temperature()).toEqual(thermostat.MINIMUM_TEMPERATURE);
+  });
+
+
+
 });
