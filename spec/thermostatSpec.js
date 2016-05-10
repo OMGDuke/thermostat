@@ -63,5 +63,23 @@ describe('Thermostat', function() {
     expect(thermostat.temperature()).toEqual(thermostat.DEFAULT_TEMPERATURE);
   });
 
+  it('colour is green when temp below 18', function() {
+    for (i=1; i<=3; i++) {
+      thermostat.decreaseTemperature();
+    }
+    expect(thermostat.displayColour()).toEqual('green');
+  });
+
+  it('colour is yellow when temp between 18 and 24', function() {
+    expect(thermostat.displayColour()).toEqual('yellow');
+  });
+
+  it('colour is red when temp above 24', function() {
+    for (i=1; i<=5; i++) {
+      thermostat.increaseTemperature();
+    }
+    expect(thermostat.displayColour()).toEqual('red');
+  });
+
 
 });

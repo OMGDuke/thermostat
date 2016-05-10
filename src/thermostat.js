@@ -34,7 +34,17 @@ function Thermostat() {
 
   this.resetTemperature = function() {
     this._temperature = this.DEFAULT_TEMPERATURE;
-  }
+  };
+
+  this.displayColour = function() {
+    if(this._temperature < 18){
+      return 'green';
+    } else if(this._temperature > 24) {
+      return 'red';
+    } else {
+      return 'yellow';
+    }
+  };
 
   this._setMaxTemperature = function() {
     if(this._isInPowerSavingMode) {
@@ -43,4 +53,6 @@ function Thermostat() {
       this.MAXIMUM_TEMPERATURE = 32;
     }
   };
+
+
 }
