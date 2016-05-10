@@ -20,3 +20,19 @@ Technologies
 -------
 - Javascript
 - Jasmine
+
+
+
+
+UI Inputs - Buttons
+-------
+- Temp +
+- Temp -
+- Temp reset
+- PSM toggle
+
+UI Outputs - p, h1, etc
+-------
+- Temp
+- Colour
+- PSM
