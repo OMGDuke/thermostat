@@ -1,8 +1,9 @@
 function Thermostat() {
 
+  this.DEFAULT_TEMPERATURE = 20;
   this.MINIMUM_TEMPERATURE = 10;
   this.MAXIMUM_TEMPERATURE = 25;
-  this._temperature = 20;
+  this._temperature = this.DEFAULT_TEMPERATURE;
   this._isInPowerSavingMode = true;
 
 
@@ -30,6 +31,10 @@ function Thermostat() {
     this._isInPowerSavingMode = !this._isInPowerSavingMode;
     this._setMaxTemperature();
   };
+
+  this.resetTemperature = function() {
+    this._temperature = this.DEFAULT_TEMPERATURE;
+  }
 
   this._setMaxTemperature = function() {
     if(this._isInPowerSavingMode) {

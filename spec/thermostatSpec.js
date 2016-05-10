@@ -5,8 +5,8 @@ describe('Thermostat', function() {
     thermostat = new Thermostat();
   });
 
-  it('starts with a temperature of 20', function() {
-    expect(thermostat.temperature()).toEqual(20);
+  it('starts at the default temperature', function() {
+    expect(thermostat.temperature()).toEqual(thermostat.DEFAULT_TEMPERATURE);
   });
 
   it('starts in power saving mode', function() {
@@ -16,14 +16,14 @@ describe('Thermostat', function() {
   it('can increase the temperature', function() {
     for (i=1; i<= 5; i++) {
       thermostat.increaseTemperature();
-      expect(thermostat.temperature()).toEqual(20 + i);
+      expect(thermostat.temperature()).toEqual(thermostat.DEFAULT_TEMPERATURE + i);
     }
   });
 
   it('can decrease the temperature', function() {
     for (i=1; i<= 5; i++) {
       thermostat.decreaseTemperature();
-      expect(thermostat.temperature()).toEqual(20 - i);
+      expect(thermostat.temperature()).toEqual(thermostat.DEFAULT_TEMPERATURE - i);
     }
   });
 
@@ -55,6 +55,12 @@ describe('Thermostat', function() {
   it('power saving mode off sets max temp to 32', function() {
     thermostat.togglePowerSavingMode();
     expect(thermostat.MAXIMUM_TEMPERATURE).toEqual(32);
+  });
+
+  it('can reset the temperature to default', function() {
+    thermostat.increaseTemperature();
+    thermostat.resetTemperature();
+    expect(thermostat.temperature()).toEqual(thermostat.DEFAULT_TEMPERATURE);
   });
 
 
