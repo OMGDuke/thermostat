@@ -9,4 +9,11 @@ describe('Thermostat', function() {
     expect(thermostat.temperature()).toEqual(20);
   });
 
+  it('can increase the temperature', function() {
+    for (i=1; i<= 5; i++) {
+      thermostat.increaseTemperature();
+      expect(thermostat.temperature()).toEqual(20 + i);
+    }
+  });
+
 });
