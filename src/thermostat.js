@@ -6,7 +6,6 @@ function Thermostat() {
   this._temperature = this.DEFAULT_TEMPERATURE;
   this._isInPowerSavingMode = true;
 
-
   this.temperature = function () {
     return this._temperature;
   };
@@ -53,6 +52,5 @@ function Thermostat() {
       this.MAXIMUM_TEMPERATURE = 32;
     }
   };
-
 
 }
